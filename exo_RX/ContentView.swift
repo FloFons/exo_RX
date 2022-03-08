@@ -8,9 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var saltFilter = false
+    @State private var pepperFilter = false
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Toggle("Show welcome message", isOn: $saltFilter).
+            Toggle("Show welcome message", isOn: $pepperFilter)
+
+            if pepperFilter {
+                Text("Hello World!")
+            }
+            if saltFilter {
+                Text("coucou")
+            }
+        }
     }
 }
 
